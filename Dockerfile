@@ -1,36 +1,39 @@
+# Stage 1: Build the Angular frontend
 ARG VERSION=snapshot
-ARG API_VERSION=snapshot
+ARG API_VERSION=feature-uploads   # jouw custom tailormap-api image tag
 
-# Note when updating this version also update the version in the workflow files
 FROM node:24.12.0 AS builder
 
 ARG BASE_HREF=/
 
 WORKDIR /app
 
-COPY ./package.json /app
-COPY ./package-lock.json /app
+# Install dependencies
+COPY ./package.json ./package-lock.json /app/
 RUN npm install
 
+# Copy source
 COPY . /app
 
+# Build the frontend
 RUN npm run build -- --base-href=${BASE_HREF}
 
-FROM ghcr.io/tailormap/tailormap-api:${API_VERSION}
+# Stage 2: Combine frontend with your custom tailormap-api
+FROM camende/tailormap-api:${API_VERSION}   # <-- je eigen image
 
 ARG VERSION=${VERSION}
 ARG API_VERSION=${API_VERSION}
 
-LABEL org.opencontainers.image.authors="info@b3partners.nl" \
-      org.opencontainers.image.description="Tailormap" \
+LABEL org.opencontainers.image.authors="camende" \
+      org.opencontainers.image.description="Tailormap Viewer with custom API" \
       org.opencontainers.image.vendor="B3Partners BV" \
-      org.opencontainers.image.title="Tailormap" \
-      org.opencontainers.image.url="https://github.com/Tailormap/tailormap-viewer/" \
-      org.opencontainers.image.source="https://github.com/Tailormap/tailormap-viewer/" \
-      org.opencontainers.image.documentation="https://github.com/Tailormap/tailormap-viewer/" \
+      org.opencontainers.image.title="Tailormap Viewer" \
+      org.opencontainers.image.source="https://github.com/camende/tailormap-viewer/" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.version="$VERSION" \
-      org.opencontainers.image.base.name="tailormap/tailormap-api:$API_VERSION" \
+      org.opencontainers.image.base.name="camende/tailormap-api:$API_VERSION" \
       tailormap-api.version="$API_VERSION"
 
+# Copy the Angular build to the API container
 COPY --from=builder /app/dist/app static/
+
