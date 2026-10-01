@@ -2710,6 +2710,10 @@
         <source>Choose a file to upload, a description can then be added to the uploaded file</source>
         <target>Wählen Sie eine Datei zum Hochladen aus, dann kann eine Beschreibung zur hochgeladenen Datei hinzugefügt werden</target>
       </trans-unit>
+          <trans-unit id="admin-core.components.coordinate-picker-help" datatype="html">
+        <source>Configure the projection and notation used by the coordinate picker. If no settings are configured, the map projection is used. Decimal degree and degree/minute formats are available for WGS84 (EPSG:4326).</source>
+        <target>Konfigurieren Sie die Projektion und Notation für die Koordinatenauswahl. Wenn nichts konfiguriert ist, wird die Kartenprojektion verwendet. Dezimalgrad und Grad/Dezimalminuten sind für WGS84 (EPSG:4326) verfügbar.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
