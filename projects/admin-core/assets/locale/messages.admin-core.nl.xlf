@@ -118,6 +118,10 @@
         <source>Measure tools</source>
         <target>Meetgereedschap</target>
       </trans-unit>
+      <trans-unit id="admin-core.application.component-mouse-coordinates" datatype="html">
+        <source>Mouse coordinates</source>
+        <target>Muiscoördinaten</target>
+      </trans-unit>
       <trans-unit id="admin-core.application.component-print" datatype="html">
         <source>Print</source>
         <target>Afdrukken</target>
@@ -924,10 +928,6 @@
       <trans-unit id="admin-core.catalog.description-hint" datatype="html">
         <source>Leave empty to use the description as provided by the service</source>
         <target>Laat leeg om de beschrijving te gebruiken zoals aangeleverd door de service</target>
-      </trans-unit>
-      <trans-unit id="admin-core.catalog.description.insert-upload.icon-button" datatype="html">
-        <source>Insert image or link to file</source>
-        <target>Voeg afbeelding of link naar bestand in</target>
       </trans-unit>
       <trans-unit id="admin-core.catalog.edit-feature-source" datatype="html">
         <source>Edit <x id="INTERPOLATION" equiv-text="{{ featureSource.title }}"/></source>
@@ -1761,6 +1761,34 @@
         <source>Measure distance title</source>
         <target>Titel voor afstand meten</target>
       </trans-unit>
+      <trans-unit id="admin-core.components.mouse-coordinates-add-display" datatype="html">
+        <source>Add coordinate display</source>
+        <target>Coördinatenweergave toevoegen</target>
+      </trans-unit>
+      <trans-unit id="admin-core.components.mouse-coordinates-format" datatype="html">
+        <source>Format</source>
+        <target>Notatie</target>
+      </trans-unit>
+      <trans-unit id="admin-core.components.mouse-coordinates-format-decimal-degrees" datatype="html">
+        <source>Decimal degrees</source>
+        <target>Decimale graden</target>
+      </trans-unit>
+      <trans-unit id="admin-core.components.mouse-coordinates-format-degrees-decimal-minutes" datatype="html">
+        <source>Degrees + decimal minutes</source>
+        <target>Graden + decimale minuten</target>
+      </trans-unit>
+      <trans-unit id="admin-core.components.mouse-coordinates-format-xy" datatype="html">
+        <source>X / Y</source>
+        <target>X / Y</target>
+      </trans-unit>
+      <trans-unit id="admin-core.components.mouse-coordinates-help" datatype="html">
+        <source>Configure one or more coordinate displays. If none are configured, coordinates are shown in the map projection. Decimal degree and degree/minute formats are available for WGS84 (EPSG:4326).</source>
+        <target>Configureer één of meer coördinatenweergaven. Als er geen zijn geconfigureerd, worden de coördinaten in de kaartprojectie getoond. Decimale graden en graden/minuten zijn beschikbaar voor WGS84 (EPSG:4326).</target>
+      </trans-unit>
+      <trans-unit id="admin-core.components.mouse-coordinates-map-crs" datatype="html">
+        <source>Map CRS</source>
+        <target>Kaart-CRS</target>
+      </trans-unit>
       <trans-unit id="admin-core.components.simple-search-add-municipality" datatype="html">
         <source>Add municipality</source>
         <target>Gemeente toevoegen</target>
@@ -2377,10 +2405,6 @@
         <source> The description is used as the ARIA label for the image to improve the accessibility of the application. </source>
         <target> De beschrijving wordt gebruikt als ARIA-label voor de afbeelding om de digitale toegankelijkheid van de applicatie te verbeteren. </target>
       </trans-unit>
-      <trans-unit id="admin-core.select-upload.description-tooltip" datatype="html">
-        <source>Choose a file to upload, a description can then be added to the uploaded file</source>
-        <target>Kies een bestand om te uploaden, daarna kan een beschrijving worden toegevoegd aan het geüploade bestand</target>
-      </trans-unit>
       <trans-unit id="admin-core.select-upload.file-in-use" datatype="html">
         <source>File is still in use</source>
         <target>Bestand wordt gebruikt</target>
@@ -2660,6 +2684,14 @@
       <trans-unit id="admin-core.users.valid-until" datatype="html">
         <source>Valid until</source>
         <target>Geldig tot</target>
+      </trans-unit>
+    <trans-unit id="admin-core.catalog.description.insert-upload.icon-button" datatype="html">
+        <source>Insert image or link to file</source>
+        <target>Voeg afbeelding of link naar bestand in</target>
+      </trans-unit>
+    <trans-unit id="admin-core.select-upload.description-tooltip" datatype="html">
+        <source>Choose a file to upload, a description can then be added to the uploaded file</source>
+        <target>Kies een bestand om te uploaden, daarna kan een beschrijving worden toegevoegd aan het geüploade bestand</target>
       </trans-unit>
     </body>
   </file>
